@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,32 +14,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PostViewController" customModule="BurgerMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5Y-eJ-j3c">
                                 <rect key="frame" x="16" y="139" width="200" height="26"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New Post" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2On-Yc-NOV">
-                                <rect key="frame" x="16" y="550" width="361" height="34"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODB-ZJ-IFO">
-                                <rect key="frame" x="16" y="751" width="361" height="35"/>
-                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <rect key="frame" x="16" y="711.66666666666663" width="343" height="34.333333333333371"/>
+                                <color key="tintColor" red="0.015686274510000001" green="0.33333333329999998" blue="0.69411764710000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save/Edit" cornerStyle="large"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save/Edit" cornerStyle="large">
+                                    <color key="baseForegroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="editPostTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dbv-3w-If4"/>
+                                    <action selector="editPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHp-Fb-OsB"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger_menu" translatesAutoresizingMaskIntoConstraints="NO" id="417-6H-yeq">
-                                <rect key="frame" x="16" y="173" width="361" height="361"/>
+                                <rect key="frame" x="16" y="164.33333333333337" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="417-6H-yeq" secondAttribute="height" multiplier="1:1" id="nSc-by-MLL"/>
                                 </constraints>
@@ -48,26 +45,64 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New Post" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2On-Yc-NOV">
+                                <rect key="frame" x="16" y="557.66666666666663" width="343" height="34"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-QJ-cdM">
+                                <rect key="frame" x="16" y="515.33333333333337" width="343" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voY-xk-dpE">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.66666666666666" height="34.333333333333336"/>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.33333333329999998" blue="0.69411764710000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Previos" cornerStyle="large">
+                                            <imageReference key="image" image="arrow.left" catalog="system" symbolScale="small"/>
+                                            <color key="baseForegroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToPreviosPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5y-jd-myx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-Xy-5Iu">
+                                        <rect key="frame" x="203.66666666666663" y="0.0" width="139.33333333333337" height="34.333333333333336"/>
+                                        <color key="tintColor" red="0.015686274509803921" green="0.33333333333333331" blue="0.69411764705882351" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Next" cornerStyle="large">
+                                            <imageReference key="image" image="arrow.right" catalog="system" symbolScale="small"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                            <color key="baseForegroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToNextPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hVq-D4-0Ag"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ODB-ZJ-IFO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0NE-Ez-p9p"/>
-                            <constraint firstItem="2On-Yc-NOV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lch-na-ZgS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2On-Yc-NOV" secondAttribute="trailing" constant="16" id="0pk-xv-psz"/>
+                            <constraint firstItem="kSt-QJ-cdM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JJ6-M3-Jyn"/>
+                            <constraint firstItem="2On-Yc-NOV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JjN-gf-kR4"/>
                             <constraint firstItem="417-6H-yeq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MKx-ED-Pug"/>
-                            <constraint firstItem="2On-Yc-NOV" firstAttribute="top" secondItem="417-6H-yeq" secondAttribute="bottom" constant="16" id="Npy-IW-RGM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ODB-ZJ-IFO" secondAttribute="bottom" constant="32" id="PKb-oB-d3f"/>
                             <constraint firstItem="L5Y-eJ-j3c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Q29-ZZ-eNl"/>
                             <constraint firstItem="L5Y-eJ-j3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QeD-Pg-SKW"/>
                             <constraint firstItem="417-6H-yeq" firstAttribute="top" secondItem="L5Y-eJ-j3c" secondAttribute="bottom" constant="8" id="bna-VI-U09"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2On-Yc-NOV" secondAttribute="trailing" constant="16" id="jmb-GP-r3g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kSt-QJ-cdM" secondAttribute="trailing" constant="16" id="i4k-mq-0o9"/>
+                            <constraint firstItem="kSt-QJ-cdM" firstAttribute="top" secondItem="417-6H-yeq" secondAttribute="bottom" constant="8" id="qFr-Gb-Cj3"/>
+                            <constraint firstItem="2On-Yc-NOV" firstAttribute="top" secondItem="kSt-QJ-cdM" secondAttribute="bottom" constant="8" id="qOp-VS-aqN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="417-6H-yeq" secondAttribute="trailing" constant="16" id="rGz-l8-KZW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ODB-ZJ-IFO" secondAttribute="trailing" constant="16" id="wMW-5R-MQb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="captionPost" destination="2On-Yc-NOV" id="ZrO-tp-Ck6"/>
-                        <outlet property="editPost" destination="ODB-ZJ-IFO" id="qep-bh-41Z"/>
                         <outlet property="picturePost" destination="417-6H-yeq" id="drP-uC-Yab"/>
                         <outlet property="titlePost" destination="L5Y-eJ-j3c" id="VI8-bo-Y5c"/>
                     </connections>
@@ -78,15 +113,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="burger_menu" width="275" height="183.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

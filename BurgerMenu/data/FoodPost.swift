@@ -15,11 +15,13 @@ struct FoodPost {
     var count: Int
 }
 
-class FoodData{
+final class FoodData{
     
-    static let foods: [FoodPost]=[
+    static var index = -1
+    
+    private static let foods: [FoodPost]=[
         FoodPost(name: "Burger", picture: "burger",
-                 caption: "We have the biggest burgers, at the lowest price: ",
+                 caption: "We have the biggest burgers, at the lowest price.",
                  price: 3.99, count: 100),
         FoodPost(name: "Cake", picture: "cake",
                  caption: "A big piece of lemon pie.",
@@ -71,4 +73,15 @@ class FoodData{
                  price: 1.99, count: 100)
     ]
     
+    static func getPrivios() -> FoodPost? {
+        guard index > 0 else { return nil }
+        index -= 1
+        return foods[index]
+    }
+    
+    static func getNext() -> FoodPost? {
+        guard case 0..<foods.count = index + 1 else { return nil }
+        index += 1
+        return foods[index]
+    }
 }
