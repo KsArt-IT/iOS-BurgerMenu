@@ -19,7 +19,7 @@ final class FoodData{
     
     static var index = -1
     
-    private static let foods: [FoodPost]=[
+    private static var foods: [FoodPost]=[
         FoodPost(name: "Burger", picture: "burger",
                  caption: "We have the biggest burgers, at the lowest price.",
                  price: 3.99, count: 100),
@@ -82,6 +82,19 @@ final class FoodData{
     static func getNext() -> FoodPost? {
         guard case 0..<foods.count = index + 1 else { return nil }
         index += 1
+        return foods[index]
+    }
+    
+    static func updateCurrentPost(_ caption: String) -> FoodPost? {
+        guard case 0..<foods.count = index else { return nil }
+        let oldFood = foods[index]
+        foods[index] = FoodPost(
+            name: oldFood.name,
+            picture: oldFood.picture,
+            caption: caption,
+            price: oldFood.price,
+            count: oldFood.count
+        )
         return foods[index]
     }
 }

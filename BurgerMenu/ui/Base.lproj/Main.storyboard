@@ -17,42 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5Y-eJ-j3c">
-                                <rect key="frame" x="16" y="139" width="200" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="L5Y-eJ-j3c">
+                                <rect key="frame" x="16" y="82" width="90.666666666666671" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODB-ZJ-IFO">
-                                <rect key="frame" x="16" y="711.66666666666663" width="343" height="34.333333333333371"/>
-                                <color key="tintColor" red="0.015686274510000001" green="0.33333333329999998" blue="0.69411764710000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save/Edit" cornerStyle="large">
-                                    <color key="baseForegroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="editPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHp-Fb-OsB"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger_menu" translatesAutoresizingMaskIntoConstraints="NO" id="417-6H-yeq">
-                                <rect key="frame" x="16" y="164.33333333333337" width="343" height="343"/>
+                                <rect key="frame" x="16" y="116.33333333333331" width="343" height="343"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="417-6H-yeq" secondAttribute="height" multiplier="1:1" id="nSc-by-MLL"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New Post" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2On-Yc-NOV">
-                                <rect key="frame" x="16" y="557.66666666666663" width="343" height="34"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-QJ-cdM">
-                                <rect key="frame" x="16" y="515.33333333333337" width="343" height="34.333333333333371"/>
+                                <rect key="frame" x="16" y="467.33333333333331" width="343" height="34.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voY-xk-dpE">
                                         <rect key="frame" x="0.0" y="0.0" width="139.66666666666666" height="34.333333333333336"/>
@@ -81,43 +60,108 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-vZ-ZJf">
+                                <rect key="frame" x="16" y="549.66666666666663" width="343" height="162"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-il-7C0">
+                                <rect key="frame" x="16" y="727.66666666666663" width="343" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="9qw-MN-knT">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="34.333333333333336"/>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.33333333329999998" blue="0.69411764710000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Cancel" cornerStyle="large">
+                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelEditPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCx-Nh-AZj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="ODB-ZJ-IFO">
+                                        <rect key="frame" x="159" y="0.0" width="184" height="34.333333333333336"/>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.33333333329999998" blue="0.69411764710000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save/Edit" cornerStyle="large">
+                                            <color key="baseForegroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="editOrSavePost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHp-Fb-OsB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="8Ah-mG-jw3">
+                                <rect key="frame" x="16" y="509.66666666666674" width="343" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Y85-OP-81J"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="New Post">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ODB-ZJ-IFO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0NE-Ez-p9p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2On-Yc-NOV" secondAttribute="trailing" constant="16" id="0pk-xv-psz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hKg-vZ-ZJf" secondAttribute="trailing" constant="16" id="0lv-8x-ttW"/>
+                            <constraint firstItem="hKg-vZ-ZJf" firstAttribute="top" secondItem="8Ah-mG-jw3" secondAttribute="bottom" constant="8" id="4xw-Uw-x4L"/>
+                            <constraint firstItem="7aH-il-7C0" firstAttribute="top" secondItem="hKg-vZ-ZJf" secondAttribute="bottom" constant="16" id="Aeh-58-mH8"/>
+                            <constraint firstItem="hKg-vZ-ZJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D8V-29-Byq"/>
                             <constraint firstItem="kSt-QJ-cdM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JJ6-M3-Jyn"/>
-                            <constraint firstItem="2On-Yc-NOV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JjN-gf-kR4"/>
+                            <constraint firstItem="8Ah-mG-jw3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="M0a-XT-tJO"/>
                             <constraint firstItem="417-6H-yeq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MKx-ED-Pug"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ODB-ZJ-IFO" secondAttribute="bottom" constant="32" id="PKb-oB-d3f"/>
-                            <constraint firstItem="L5Y-eJ-j3c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Q29-ZZ-eNl"/>
                             <constraint firstItem="L5Y-eJ-j3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QeD-Pg-SKW"/>
+                            <constraint firstItem="7aH-il-7C0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Tod-eO-KEx"/>
                             <constraint firstItem="417-6H-yeq" firstAttribute="top" secondItem="L5Y-eJ-j3c" secondAttribute="bottom" constant="8" id="bna-VI-U09"/>
+                            <constraint firstItem="L5Y-eJ-j3c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="gdd-46-9Qd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kSt-QJ-cdM" secondAttribute="trailing" constant="16" id="i4k-mq-0o9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7aH-il-7C0" secondAttribute="bottom" constant="16" id="pBr-Ch-sBf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7aH-il-7C0" secondAttribute="trailing" constant="16" id="q3r-HP-05Z"/>
                             <constraint firstItem="kSt-QJ-cdM" firstAttribute="top" secondItem="417-6H-yeq" secondAttribute="bottom" constant="8" id="qFr-Gb-Cj3"/>
-                            <constraint firstItem="2On-Yc-NOV" firstAttribute="top" secondItem="kSt-QJ-cdM" secondAttribute="bottom" constant="8" id="qOp-VS-aqN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="417-6H-yeq" secondAttribute="trailing" constant="16" id="rGz-l8-KZW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ODB-ZJ-IFO" secondAttribute="trailing" constant="16" id="wMW-5R-MQb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Ah-mG-jw3" secondAttribute="trailing" constant="16" id="u6i-il-WET"/>
+                            <constraint firstItem="8Ah-mG-jw3" firstAttribute="top" secondItem="kSt-QJ-cdM" secondAttribute="bottom" constant="8" id="wki-AP-wME"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="captionPost" destination="2On-Yc-NOV" id="ZrO-tp-Ck6"/>
+                        <outlet property="cancelButton" destination="9qw-MN-knT" id="DcP-rM-I7d"/>
+                        <outlet property="captionPost" destination="8Ah-mG-jw3" id="PsJ-vX-i2p"/>
+                        <outlet property="captionPostView" destination="hKg-vZ-ZJf" id="OUg-Zd-GO7"/>
+                        <outlet property="editSaveButton" destination="ODB-ZJ-IFO" id="yHd-hb-pM6"/>
                         <outlet property="picturePost" destination="417-6H-yeq" id="drP-uC-Yab"/>
                         <outlet property="titlePost" destination="L5Y-eJ-j3c" id="VI8-bo-Y5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="130.40000000000001" y="-28.078817733990149"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="burger_menu" width="275" height="183.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
