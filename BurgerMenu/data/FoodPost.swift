@@ -5,12 +5,12 @@
 //  Created by KsArT on 30.05.2024.
 //
 
-import Foundation
+import UIKit
 
 struct FoodPost {
     let name: String
-    let picture: String
-    let caption: String
+    let picture: UIImage?
+    let description: String
     var price: Float
     var count: Int
 }
@@ -20,59 +20,80 @@ final class FoodData{
     static var index = -1
     
     private static var foods: [FoodPost]=[
-        FoodPost(name: "Burger", picture: "burger",
-                 caption: "We have the biggest burgers, at the lowest price.",
+        FoodPost(name: "Burger", 
+                 picture: UIImage(named: "burger"),
+                 description: "We have the biggest burgers, at the lowest price.",
                  price: 3.99, count: 100),
-        FoodPost(name: "Cake", picture: "cake",
-                 caption: "A big piece of lemon pie.",
+        FoodPost(name: "Cake", 
+                 picture: UIImage(named: "cake"),
+                 description: "A big piece of lemon pie.",
                  price: 1.99, count: 100),
-        FoodPost(name: "Chicken", picture: "chicken", 
-                 caption: "Big fried chicken.",
+        FoodPost(name: "Chicken", 
+                 picture: UIImage(named: "chicken"),
+                 description: "Big fried chicken.",
                  price: 5.99, count: 100),
-        FoodPost(name: "Donut", picture: "donut", 
-                 caption: "The most delicious and biggest donuts!",
+        FoodPost(name: "Donut", 
+                 picture: UIImage(named: "donut"),
+                 description: "The most delicious and biggest donuts!",
                  price: 1.99, count: 100),
-        FoodPost(name: "French-fries", picture: "french-fries", 
-                 caption: "French fries, very tasty!",
+        FoodPost(name: "French-fries", 
+                 picture: UIImage(named: "french-fries"),
+                 description: "French fries, very tasty!",
                  price: 2.99, count: 100),
-        FoodPost(name: "Hot-dog", picture: "hot-dog",
-                 caption: "A hot dog with a delicious smoked sausage.",
+        FoodPost(name: "Hot-dog", 
+                 picture: UIImage(named: "hot-dog"),
+                 description: "A hot dog with a delicious smoked sausage.",
                  price: 1.99, count: 100),
-        FoodPost(name: "Ice-cream", picture: "ice-cream",
-                 caption: "Ice cream, three scoops with three different flavors: lemon, strawberry, vanilla.",
+        FoodPost(name: "Ice-cream", 
+                 picture: UIImage(named: "ice-cream"),
+                 description: "Ice cream, three scoops with three different flavors: lemon, strawberry, vanilla.",
                  price: 1.99, count: 100),
-        FoodPost(name: "Japanese-food", picture: "japanese-food", 
-                 caption: "Japanese food, several different dishes to introduce you to Japanese cuisine.",
+        FoodPost(name: "Japanese-food", 
+                 picture: UIImage(named: "japanese-food"),
+                 description: "Japanese food, several different dishes to introduce you to Japanese cuisine.",
                  price: 6.99, count: 100),
-        FoodPost(name: "Kebab", picture: "kebab", 
-                 caption: "Kebab, Nesh kebab is the most delicious, you'll lick your fingers!",
+        FoodPost(name: "Kebab", 
+                 picture: UIImage(named: "kebab"),
+                 description: "Kebab, Nesh kebab is the most delicious, you'll lick your fingers!",
                  price: 3.99, count: 100),
-        FoodPost(name: "Noodles", picture: "noodles", 
-                 caption: "A bowl of hot noodles won't leave you hungry!",
+        FoodPost(name: "Noodles", 
+                 picture: UIImage(named: "noodles"),
+                 description: "A bowl of hot noodles won't leave you hungry!",
                  price: 4.99, count: 100),
-        FoodPost(name: "Pancake", picture: "pancake", 
-                 caption: "Pancakes with blueberry jam.",
+        FoodPost(name: "Pancake", 
+                 picture: UIImage(named: "pancake"),
+                 description: "Pancakes with blueberry jam.",
                  price: 4.99, count: 100),
-        FoodPost(name: "Pizza", picture: "pizza",
-                 caption: "Pizza with seafood, large size.",
+        FoodPost(name: "Pizza", 
+                 picture: UIImage(named: "pizza"),
+                 description: "Pizza with seafood, large size.",
                  price: 2.99, count: 100),
-        FoodPost(name: "Sandwich", picture: "sandwich",
-                 caption: "Not a big sandwich to just snack on.",
+        FoodPost(name: "Sandwich", 
+                 picture: UIImage(named: "sandwich"),
+                 description: "Not a big sandwich to just snack on.",
                  price: 1.49, count: 100),
-        FoodPost(name: "Spaghetti", picture: "spaghetti", 
-                 caption: "A plate of spaghetti, a hearty dinner for you!",
+        FoodPost(name: "Spaghetti", 
+                 picture: UIImage(named: "spaghetti"),
+                 description: "A plate of spaghetti, a hearty dinner for you!",
                  price: 1.49, count: 100),
-        FoodPost(name: "Sushi", picture: "sushi", 
-                 caption: "Large set of sushi 23 pieces.",
+        FoodPost(name: "Sushi", 
+                 picture: UIImage(named: "sushi"),
+                 description: "Large set of sushi 23 pieces.",
                  price: 7.99, count: 100),
-        FoodPost(name: "Taco", picture: "taco", 
-                 caption: "Tacos, a snack on the go.",
+        FoodPost(name: "Taco", 
+                 picture: UIImage(named: "taco"),
+                 description: "Tacos, a snack on the go.",
                  price: 1.99, count: 100),
-        FoodPost(name: "Waffle", picture: "waffle", 
-                 caption: "Waffles for breakfast, filling and healthy food.",
+        FoodPost(name: "Waffle", 
+                 picture: UIImage(named: "waffle"),
+                 description: "Waffles for breakfast, filling and healthy food.",
                  price: 1.99, count: 100)
     ]
     
+    private init() {
+
+    }
+
     static func getPrivios() -> FoodPost? {
         guard index > 0 else { return nil }
         index -= 1
@@ -85,15 +106,15 @@ final class FoodData{
         return foods[index]
     }
     
-    static func updateCurrentPost(_ caption: String) -> FoodPost? {
+    static func updateCurrentPost(_ post: FoodPost) -> FoodPost? {
         guard case 0..<foods.count = index else { return nil }
-        let oldFood = foods[index]
+
         foods[index] = FoodPost(
-            name: oldFood.name,
-            picture: oldFood.picture,
-            caption: caption,
-            price: oldFood.price,
-            count: oldFood.count
+            name: post.name,
+            picture: post.picture,
+            description: post.description,
+            price: post.price,
+            count: post.count
         )
         return foods[index]
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12FF17C2C1758B300D1CAA7 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12FF17B2C1758B300D1CAA7 /* EditPostViewController.swift */; };
 		F15C338B2C13906700DC6EF1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C338A2C13906700DC6EF1 /* UIViewExt.swift */; };
 		F15C338D2C1390BA00DC6EF1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C338C2C1390BA00DC6EF1 /* AppConstants.swift */; };
 		F16332F42C090E56000433B4 /* FoodPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16332F32C090E56000433B4 /* FoodPost.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F12FF17B2C1758B300D1CAA7 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		F15C338A2C13906700DC6EF1 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		F15C338C2C1390BA00DC6EF1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F16332F32C090E56000433B4 /* FoodPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPost.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				F19748F32C08C98A00C09B79 /* Main.storyboard */,
 				F19749022C08CF4600C09B79 /* PostViewController.swift */,
 				F15C338A2C13906700DC6EF1 /* UIViewExt.swift */,
+				F12FF17B2C1758B300D1CAA7 /* EditPostViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				F15C338B2C13906700DC6EF1 /* UIViewExt.swift in Sources */,
 				F19749032C08CF4600C09B79 /* PostViewController.swift in Sources */,
+				F12FF17C2C1758B300D1CAA7 /* EditPostViewController.swift in Sources */,
 				F19748EE2C08C98A00C09B79 /* AppDelegate.swift in Sources */,
 				F19748F02C08C98A00C09B79 /* SceneDelegate.swift in Sources */,
 				F15C338D2C1390BA00DC6EF1 /* AppConstants.swift in Sources */,

@@ -27,3 +27,18 @@ extension UIButton {
         self.clipsToBounds = true
     }
 }
+
+extension UIView {
+
+    func applyBorderStyle() {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = 1
+        self.layer.borderColor = AppColors.darkBlue.cgColor(alpha: 0.3)
+    }
+
+    func animateCorner(){
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: [.autoreverse,.repeat]) { [weak self] in
+            self?.layer.cornerRadius = cornerRadius
+        }
+    }
+}
