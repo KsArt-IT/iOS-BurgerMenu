@@ -17,7 +17,8 @@ class EditPostViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
 
     private var post: FoodPost?
-    private var postDelegate: PostDelegate?
+    private weak var completion: PostEditDelegate?
+    private let picker = ImagePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,9 @@ class EditPostViewController: UIViewController {
         picturePost.animateCorner()
     }
 
-    public func configure(_ post: FoodPost, _ postDelegate: PostDelegate) {
+    public func configure(_ post: FoodPost, _ postDelegate: PostEditDelegate) {
         self.post = post
-        self.postDelegate = postDelegate
+        self.completion = postDelegate
     }
 
     private func initViewParameters() {
@@ -47,11 +48,13 @@ class EditPostViewController: UIViewController {
     }
 
     @IBAction func changePictureClick(_ sender: Any) {
-        print("Нажал")
+        picker.showAndTake(in: self) { [weak self] image in
+            self?.picturePost.image = image
+        }
     }
 
     @IBAction func saveButtonClick(_ sender: Any) {
-        if let post = self.post, let postDelegate = postDelegate {
+        if let post = self.post, let completion = self.completion {
             let postUpdate = FoodPost(
                 name: titlePost?.text ?? "",
                 picture: picturePost.image,
@@ -59,7 +62,7 @@ class EditPostViewController: UIViewController {
                 price: post.price,
                 count: post.count
             )
-            postDelegate.update(postUpdate)
+            completion.update(postUpdate)
             back()
         }
     }
@@ -67,6 +70,7 @@ class EditPostViewController: UIViewController {
     @IBAction func cancelButtonClick(_ sender: Any) {
         back()
     }
+
     private func back() {
         self.navigationController?.popViewController(animated: true)
     }

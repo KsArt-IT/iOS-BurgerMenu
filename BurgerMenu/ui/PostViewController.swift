@@ -74,13 +74,13 @@ final class PostViewController: UIViewController {
 
 }
 
-extension PostViewController: PostDelegate {
+extension PostViewController: PostEditDelegate {
 
     func update(_ post: FoodPost) {
         showPost(FoodData.updateCurrentPost(post))
     }
 }
 
-protocol PostDelegate: NSObject {
+protocol PostEditDelegate: NSObject {
     func update(_ post: FoodPost)
 }
